@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121">
+
+    <Button
+        android:id="@+id/button8_q8"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="275dp"
+        android:text="Tak"
+        android:background="@drawable/round_white"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <Button
+        android:id="@+id/button7_q8"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="340dp"
+        android:text="Nie"
+        android:background="@drawable/round_white"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+
+    <TextView
+        android:id="@+id/text_q8"
+        android:layout_width="356dp"
+        android:layout_height="213dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/round_orange"
+        android:gravity="center"
+        android:text="Czy Twoje miesnie sa obolale / czy leczysz kontuzje?"
+        android:textSize="40dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="91dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/biegaczz" />
+
+
+</RelativeLayout>
