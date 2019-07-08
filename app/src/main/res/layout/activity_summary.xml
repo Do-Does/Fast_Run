@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pulse"
+    android:background="#212121"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Summary">
+
+    <TextView
+        android:id="@+id/fatigue_text_long"
+        android:layout_width="356dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_orange"
+        android:gravity="center"
+        android:text="W skali od 1 do 4, gdzie\n
+1.Świetnie - mógłbym biec dalej!\n
+2.Dobrze, jeszcze chwilę mógłbym pobiegać\n
+3. Trochę zmęczony,więcej już bym nie pobiegał\n
+4.Ciężko mi złapać oddech!\n
+Twój poziom zmęczenia oceniam na:"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/fatigue_text"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/round_orange"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/agreement_text"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/round_orange"
+        android:gravity="center"
+        android:text="Zgadzasz się?a4"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+
+    <Button
+        android:id="@+id/button_summary_yes"
+        android:layout_width="147dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/round_white"
+        android:text="Tak"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/button_summary_no"
+        android:layout_width="147dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_white"
+        android:text="Nie"
+        android:textColor="#000000" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="91dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/biegaczz" />
+
+
+
+
+
+</RelativeLayout>

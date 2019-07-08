@@ -26,7 +26,7 @@ public class Question8 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button8_q8.getText().toString();
                 distance_string.add("Q8: "+buttonText);
-                startActivity(new Intent(Question8.this,NameActivity.class));
+                startActivity(new Intent(Question8.this,Summary.class));
             }
         });
 
@@ -35,7 +35,7 @@ public class Question8 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button7_q8.getText().toString();
                 distance_string.add("Q8: "+buttonText);
-                startActivity(new Intent(Question8.this,NameActivity.class));
+                startActivity(new Intent(Question8.this,Summary.class));
             }
         });
 

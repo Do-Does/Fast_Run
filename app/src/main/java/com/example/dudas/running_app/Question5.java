@@ -6,9 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 import static com.example.dudas.running_app.MainActivity.distance_string;
 
 public class Question5 extends AppCompatActivity {
+
+    public static ArrayList<String> dream = new ArrayList<String>();
 
 
     @Override
@@ -26,6 +30,8 @@ public class Question5 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button8_q5.getText().toString();
                 distance_string.add("Q5: "+buttonText);
+                String dream_level="1";
+                dream.add(dream_level);
                 startActivity(new Intent(Question5.this,Question6.class));
             }
         });
@@ -35,6 +41,8 @@ public class Question5 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button7_q5.getText().toString();
                 distance_string.add("Q5: "+buttonText);
+                String dream_level="2";
+                dream.add(dream_level);
                 startActivity(new Intent(Question5.this,Question6.class));
             }
         });
@@ -44,6 +52,8 @@ public class Question5 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button6_q5.getText().toString();
                 distance_string.add("Q5: "+buttonText);
+                String dream_level="3";
+                dream.add(dream_level);
                 startActivity(new Intent(Question5.this,Question6.class));
             }
         });

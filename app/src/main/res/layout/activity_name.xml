@@ -11,10 +11,10 @@
     <TextView
         android:id="@+id/text_name"
         android:layout_width="356dp"
-        android:layout_height="122dp"
+        android:layout_height="80dp"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_orange"
         android:text="Podaj swoje imię"
         android:textSize="40dp"
@@ -23,12 +23,37 @@
     <EditText
         android:id="@+id/name_edit"
         android:layout_width="246dp"
-        android:layout_height="83dp"
+        android:layout_height="70dp"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
         android:background="@drawable/round_orange"
         android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text_recomendation"
+        android:layout_width="356dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="210dp"
+        android:background="@drawable/round_orange"
+        android:text=""
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_dh"
+        android:layout_width="356dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/round_orange"
+        android:text=""
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/button_zakoncz"
@@ -37,7 +62,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="107dp"
-        android:layout_marginBottom="114dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/round_white"
         android:text="Zakończ"
         tools:layout_editor_absoluteX="8dp"

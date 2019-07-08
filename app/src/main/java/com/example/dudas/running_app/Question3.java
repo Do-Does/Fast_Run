@@ -6,10 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -47,7 +56,11 @@ public class Question3 extends AppCompatActivity {
                    //reference.child("training").child(laps).setValue(true);
                   //  reference.child(tetno).child(dateFormat.format(date)).child(laps).setValue(true);
                 //}
-                startActivity(new Intent(Question3.this,Question4.class));
+                String fatigue_level="1";
+                writeFile(fatigue_level);
+                //readFile(buttonText);
+                startActivity(new Intent(Question3.this,NameActivity.class));
+
             }
         });
 
@@ -56,7 +69,10 @@ public class Question3 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button7_q3.getText().toString();
                 distance_string.add("Q3: "+buttonText);
-                startActivity(new Intent(Question3.this,Question4.class));
+                String fatigue_level="3";
+                writeFile(fatigue_level);
+                //readFile(buttonText);
+                startActivity(new Intent(Question3.this,NameActivity.class));
             }
         });
 
@@ -65,7 +81,10 @@ public class Question3 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button6_q3.getText().toString();
                 distance_string.add("Q3: "+buttonText);
-                startActivity(new Intent(Question3.this,Question4.class));
+                String fatigue_level="4";
+               writeFile(fatigue_level);
+                //readFile(buttonText);
+                startActivity(new Intent(Question3.this,NameActivity.class));
             }
         });
 
@@ -74,9 +93,59 @@ public class Question3 extends AppCompatActivity {
             public void onClick(View v) {
                 String buttonText = button5_q3.getText().toString();
                 distance_string.add("Q3: "+buttonText);
-                startActivity(new Intent(Question3.this,Question4.class));
+                String fatigue_level="2";
+                writeFile(fatigue_level);
+                //readFile(a);
+                startActivity(new Intent(Question3.this,NameActivity.class));
+
             }
         });
+    }
+
+    public void writeFile(String buttonText){
+        File file=new File(getApplicationContext().getFilesDir(),"Fast Runq3.txt");
+        try{
+            FileOutputStream fileOutputStream = openFileOutput("Fast Runq3.txt",MODE_PRIVATE);
+            fileOutputStream.write(buttonText.getBytes());
+            fileOutputStream.close();
+
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void readFile(String buttonText){
+        try{
+            FileInputStream fileInputStream = openFileInput("Fast Run.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader((fileInputStream));
+
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            StringBuffer stringBuffer = new StringBuffer();
+
+            String lines;
+            while((lines=bufferedReader.readLine())!=null){
+                stringBuffer.append(lines+"\n");
+
+                //Toast.makeText(getApplicationContext(),stringBuffer,Toast.LENGTH_SHORT).show();
+                String str = stringBuffer.toString();
+                Toast.makeText(getApplicationContext(),str,Toast.LENGTH_SHORT).show();
+                str.toLowerCase();
+                buttonText.toLowerCase();
+                if (buttonText.toLowerCase()==str.toLowerCase()){
+                    Toast.makeText(getApplicationContext(),"yeeees",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 }

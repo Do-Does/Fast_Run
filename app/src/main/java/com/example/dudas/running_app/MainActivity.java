@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -84,12 +85,17 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Double> distance_height = new ArrayList<Double>();
     ArrayList<Double> distance_height_sum = new ArrayList<Double>();
 
+
     DatabaseReference reference;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                "MyApp::MyWakelockTag");
+        wakeLock.acquire();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -175,12 +181,12 @@ public class MainActivity extends AppCompatActivity {
     public double sumHeight(){
 
         int i;
-        double sum = 0;
+        double sum = 0.00;
         for (i = 1; i < distance_height_sum.size(); i++) {
             sum += distance_height_sum.get(i);
         }
-        double sum1=sum-distance_height.get(1);
-        twysokosc.setText(new DecimalFormat("###.##").format(sum1));
+        //double sum1=sum-distance_height.get(1);
+        twysokosc.setText(new DecimalFormat("###.##").format(sum));
         return  sum;
     }
 
@@ -372,10 +378,11 @@ public class MainActivity extends AppCompatActivity {
                 current_Lat = location.getLatitude();
                 current_Alt=location.getAltitude();
 
-                if (current_Alt>distance_height.get(distance_height.size()-1)) {
-                    double c_height=current_Alt-distance_height.get(distance_height.size()-1);
+                if (current_Alt>(distance_height.get(distance_height.size()-1))) {
+                    double c_height=current_Alt-(distance_height.get(distance_height.size()-1));
 
                    // distance_height.add(current_Alt);
+                    distance_height.clear();
                     distance_height_sum.add(c_height);
                     distance_height.add(current_Alt);
                     sumHeight();
@@ -552,7 +559,7 @@ public class MainActivity extends AppCompatActivity {
        String wysokosc = twysokosc.getText().toString();
 
         distance_string.add(dystans);
-        distance_string.add(wysokosc);
+        distance_string.add("Wysokosc: "+wysokosc);
 
        //Post post = new Post(dystans);
 
